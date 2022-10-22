@@ -1,0 +1,29 @@
+.navbar {
+    overflow: hidden;
+    text-align: right;
+    font-size: large;
+    text-size-adjust: 30px;
+   
+    color: rgb(232, 15, 149);
+    position: sticky;
+    top: 20px; 
+    width: 100%; 
+  }
+  .logo{
+    text-align: left;
+  }
+  h1
+  {
+    text-align: center;
+    text-decoration-color: crimson;
+  }
+  
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 20cd;
+    width: 100%;
+    background-color: rgb(218, 142, 11);
+    color: aliceblue;
+    text-align: center;
+}

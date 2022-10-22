@@ -1,0 +1,70 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div *ngIf = "product.elproduct_id ==0"> <h2>Add Product</h2></div>
+            <div *ngIf = "product.elproduct_id >0">  <h2>Update Product</h2></div>
+            <hr>
+
+            <form #spForma="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group-row">
+                    <div class="form-group-row">
+                        <label class="col-sm-2 col-form-label">ProductName</label>
+                        <input type="text" name="elproduct_name" [(ngModel)]="product.elproduct_name"  required minlength="4" appForbiddenName="bob"
+                        [(ngModel)]="product.elproduct_name" #name="ngModel"/>
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert">
+        <div *ngIf="name.errors?.['required']">
+            Name is required.
+          </div>
+          <div *ngIf="name.errors?.['minlength']">
+            Name must be at least 4 characters long.
+          </div>
+          <div *ngIf="name.errors?.['forbiddenName']">
+            Name cannot be Bob.
+          </div>
+        </div>
+      
+                    </div>
+    
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">ProductDescription</label>
+                    <input type="text" name="elproduct_description" [(ngModel)]="product.elproduct_description" />
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">UnitPrice</label>
+                    <input type="text" name="unit_price" [(ngModel)]="product.unit_price" />
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">ImagePath</label>
+                    <input type="text" name="elproduct_image" [(ngModel)]="product.elproduct_image"/>
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">Active</label>
+                    <input type="text" name="active" [(ngModel)]="product.active" />
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">AvailableStock</label>
+                    <input type="text" name="available_stock" [(ngModel)]="product.available_stock"/>
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">DateCreated</label>
+                    <input type="text" name="date_created" [(ngModel)]="product.date_created"/>
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">LastUpdated</label>
+                    <input type="text" name="last_updated" [(ngModel)]="product.last_updated"/>
+                </div><br>
+                <div class="form-group-row">
+                    <label class="col-sm-2 col-form-label">CategoryId</label>
+                    <input type="text" name="elcategory_id" [(ngModel)]="product.elcategory_id"/>
+                </div><br>
+                <div class="form-group-row">
+                    <div class="col-sm-2"><button class="btn btn-info" type="submit">submit</button></div>
+                </div>
+
+            </form>
+            </div>
+            </div>
+            </div>
+
